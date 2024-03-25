@@ -11,6 +11,10 @@ using Swashbuckle.AspNetCore.Filters;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Sett appen til å lytte på porten angitt av WEBSITES_PORT eller 8080 som standard
+var port = Environment.GetEnvironmentVariable("WEBSITES_PORT") ?? "8080";
+builder.WebHost.UseUrls($"http://*:{port}");
+
 builder.Services.AddSignalR();
 
 builder.Services.AddControllers(); // This line registers controller services
@@ -26,17 +30,15 @@ builder.Services.AddCors(options =>
 });
 
 // Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
 {
     options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
-        {
-            In = ParameterLocation.Header,
-            Name = "Authorization",
-            Type = SecuritySchemeType.ApiKey
-        });
-    
+    {
+        In = ParameterLocation.Header,
+        Name = "Authorization",
+        Type = SecuritySchemeType.ApiKey
+    });
     options.OperationFilter<SecurityRequirementsOperationFilter>();
 });
 
@@ -46,26 +48,21 @@ var keyVaultUri = builder.Configuration["KeyVault:Uri"];
 // Legg til Azure Key Vault til konfigurasjonen
 builder.Configuration.AddAzureKeyVault(new Uri(keyVaultUri), new DefaultAzureCredential());
 
-
 // Add services to the container.
 var connectionString = builder.Configuration["blogPlatformDefaultConnection"];
 
-
 builder.Services.AddDbContext<DataContext>(options =>
-    options.UseMySql(connectionString,
-        ServerVersion.AutoDetect(connectionString)));
+    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
 builder.Services.AddAuthorization();
 builder.Services.AddIdentityApiEndpoints<IdentityUser>()
     .AddEntityFrameworkStores<DataContext>();
-
 
 // Etter å ha lagt til Key Vault, hent konfigurasjonsverdier
 var azureBlobStorageConnectionString = builder.Configuration["blogPlatformBlobStorageConnectionString"];
 
 // Bruk verdien til å konfigurere Azure blob storage
 builder.Services.AddSingleton(s => new Azure.Storage.Blobs.BlobServiceClient(azureBlobStorageConnectionString));
-
 
 builder.Services.AddScoped<IAzureBlobService, AzureBlobService>();
 
@@ -79,24 +76,14 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseStaticFiles();
-
 app.MapIdentityApi<IdentityUser>();
-
 app.UseCors("ViteCorsPolicy");
-
 app.UseHttpsRedirection();
-
 app.UseRouting();
-
 app.UseAuthentication();
 app.UseAuthorization();
-
 app.MapControllers();
-
-// Definer ruten for SignalR hub
 app.MapHub<CommentHub>("/commentHub");
-
 app.MapFallbackToFile("index.html");
 
 app.Run();
-
