@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon, PencilIcon } from '@heroicons/react/24/outline';
 import { useNavigate } from "react-router-dom";

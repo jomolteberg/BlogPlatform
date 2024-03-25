@@ -1,11 +1,9 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import CreateComment from "./CreateComment";
 import Comments from "./Comments";
 import { BlogPost } from "./types";
-import { useNavigate } from "react-router-dom";
-
 
 
 function BlogPostPage() {
@@ -13,7 +11,6 @@ function BlogPostPage() {
   const [post, setPost] = useState<BlogPost | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<Error | null>(null);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchPost = async () => {

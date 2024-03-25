@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/assets/homepage-bg.jpg",
+      "PackagePath": "staticwebassets/assets/homepage-bg.jpg"
+    },
+    {
+      "Id": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/assets/index-BWbI8jmx.js",
+      "PackagePath": "staticwebassets/assets/index-BWbI8jmx.js"
+    },
+    {
+      "Id": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/assets/index-CwKQJYoy.css",
+      "PackagePath": "staticwebassets/assets/index-CwKQJYoy.css"
+    },
+    {
+      "Id": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/index.html",
+      "PackagePath": "staticwebassets/index.html"
+    },
+    {
+      "Id": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/vite.svg",
+      "PackagePath": "staticwebassets/vite.svg"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.BlogPlatformAPI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.BlogPlatformAPI.props",
+      "PackagePath": "build\\BlogPlatformAPI.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.BlogPlatformAPI.props",
+      "PackagePath": "buildMultiTargeting\\BlogPlatformAPI.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.BlogPlatformAPI.props",
+      "PackagePath": "buildTransitive\\BlogPlatformAPI.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

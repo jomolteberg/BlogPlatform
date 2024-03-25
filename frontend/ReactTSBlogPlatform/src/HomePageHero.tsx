@@ -1,12 +1,15 @@
+
+
+
 export default function HomePageHero() {
-  const headerImage = "./src/assets/images/homepage-bg.jpg";
+
+  const headerImage = "/assets/homepage-bg.jpg";
 
   return (
    
 <div className="relative isolate overflow-hidden bg-gray-900 px-6 py-32 sm:py-56 lg:px-8 h-[450px] sm:h-[550px]">
       <img
-        src={headerImage}
-        alt=""
+         src={headerImage} alt="Homepage background"
         className="absolute inset-0 -z-10 h-full w-full object-cover"
       />
       <div

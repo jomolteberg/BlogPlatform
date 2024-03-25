@@ -292,3 +292,4 @@
 /Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/obj/Debug/net8.0/BlogPlatformAPI.pdb
 /Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/obj/Debug/net8.0/BlogPlatformAPI.genruntimeconfig.cache
 /Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/obj/Debug/net8.0/ref/BlogPlatformAPI.dll
+/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/bin/Debug/net8.0/BlogPlatformAPI.staticwebassets.runtime.json

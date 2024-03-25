@@ -40,8 +40,15 @@ builder.Services.AddSwaggerGen(options =>
     options.OperationFilter<SecurityRequirementsOperationFilter>();
 });
 
+// Hent URI til Key Vault fra appsettings.json
+var keyVaultUri = builder.Configuration["KeyVault:Uri"];
+
+// Legg til Azure Key Vault til konfigurasjonen
+builder.Configuration.AddAzureKeyVault(new Uri(keyVaultUri), new DefaultAzureCredential());
+
+
 // Add services to the container.
-var connectionString = builder.Configuration.GetConnectionString("blogPlatformDefaultConnection");
+var connectionString = builder.Configuration["blogPlatformDefaultConnection"];
 
 
 builder.Services.AddDbContext<DataContext>(options =>
@@ -53,21 +60,14 @@ builder.Services.AddIdentityApiEndpoints<IdentityUser>()
     .AddEntityFrameworkStores<DataContext>();
 
 
-// Configure Azure blob storage
-builder.Services.AddSingleton(s =>
-{
-    var configuration = s.GetRequiredService<IConfiguration>();
-    return new Azure.Storage.Blobs.BlobServiceClient(
-        configuration.GetValue<string>("AzureBlobStorage:ConnectionString"));
-});
+// Etter å ha lagt til Key Vault, hent konfigurasjonsverdier
+var azureBlobStorageConnectionString = builder.Configuration["blogPlatformBlobStorageConnectionString"];
+
+// Bruk verdien til å konfigurere Azure blob storage
+builder.Services.AddSingleton(s => new Azure.Storage.Blobs.BlobServiceClient(azureBlobStorageConnectionString));
+
 
 builder.Services.AddScoped<IAzureBlobService, AzureBlobService>();
-
-// Hent URI til Key Vault fra appsettings.json
-var keyVaultUri = builder.Configuration["KeyVault:Uri"];
-
-// Legg til Azure Key Vault til konfigurasjonen
-builder.Configuration.AddAzureKeyVault(new Uri(keyVaultUri), new DefaultAzureCredential());
 
 var app = builder.Build();
 
@@ -78,11 +78,15 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseStaticFiles();
+
 app.MapIdentityApi<IdentityUser>();
 
 app.UseCors("ViteCorsPolicy");
 
 app.UseHttpsRedirection();
+
+app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
@@ -91,6 +95,8 @@ app.MapControllers();
 
 // Definer ruten for SignalR hub
 app.MapHub<CommentHub>("/commentHub");
+
+app.MapFallbackToFile("index.html");
 
 app.Run();
 
