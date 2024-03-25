@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+      height: 100%;
+      --color-primary: hsla(11, 100%, 62.2%, 1);
+    }
+
+
+}
