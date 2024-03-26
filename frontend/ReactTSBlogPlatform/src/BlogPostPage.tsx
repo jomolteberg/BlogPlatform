@@ -16,7 +16,7 @@ function BlogPostPage() {
     const fetchPost = async () => {
       setIsLoading(true);
       try {
-        const response = await axios.get(`https://localhost:5001/BlogPost/${id}`);
+        const response = await axios.get(`blogplatform.azurewebsites.net/BlogPost/${id}`);
         setPost(response.data);
       } catch (err) {
         if (err instanceof Error) {
@@ -45,7 +45,7 @@ function BlogPostPage() {
           <figure className="mt-16">
             <img
               className="aspect-video rounded-xl bg-gray-50 object-cover"
-              src={post.imageUrl.startsWith('http') ? post.imageUrl : `https://localhost:5001${post.imageUrl}`}
+              src={post.imageUrl.startsWith('http') ? post.imageUrl : `blogplatform.azurewebsites.net${post.imageUrl}`}
               alt=""
             />
           </figure>

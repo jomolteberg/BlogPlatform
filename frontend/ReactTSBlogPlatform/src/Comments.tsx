@@ -19,7 +19,7 @@ const Comments: React.FC<CommentProps> = ({ blogPostId }) => {
     const fetchComments = async () => {
       try {
         const response = await axios.get<CommentType[]>(
-          `https://localhost:5001/Comments/ByBlogPost/${blogPostId}`
+          `blogplatform.azurewebsites.net/Comments/ByBlogPost/${blogPostId}`
         );
         setComments(response.data);
       } catch (error) {
@@ -30,7 +30,7 @@ const Comments: React.FC<CommentProps> = ({ blogPostId }) => {
     fetchComments();
 
     const connection = new signalR.HubConnectionBuilder()
-      .withUrl("https://localhost:5001/commentHub")
+      .withUrl("blogplatform.azurewebsites.net/commentHub")
       .configureLogging(signalR.LogLevel.Information)
       .build();
 
@@ -64,7 +64,7 @@ const Comments: React.FC<CommentProps> = ({ blogPostId }) => {
         return; // Avbryt operasjonen hvis ingen token er funnet
       }
 
-      await axios.delete(`https://localhost:5001/Comments/${commentId}`, {
+      await axios.delete(`blogplatform.azurewebsites.net/Comments/${commentId}`, {
         headers: {
           Authorization: `Bearer ${token}`, // Inkluder token i forespørselens headers
         },
@@ -93,7 +93,7 @@ const Comments: React.FC<CommentProps> = ({ blogPostId }) => {
   
     try {
       // Oppdater kommentaren på serveren
-      await axios.put(`https://localhost:5001/Comments/${currentCommentId}`, { text: newText }, {
+      await axios.put(`blogplatform.azurewebsites.net/Comments/${currentCommentId}`, { text: newText }, {
         headers: {
           'Authorization': `Bearer ${token}`,
         },

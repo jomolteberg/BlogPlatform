@@ -22,7 +22,7 @@ function PrettyCarousel() {
     const fetchPosts = async () => {
       try {
         // Spesifiserer den forventede responsen som et array av BlogPost
-        const response = await axios.get<BlogPost[]>('https://localhost:5001/BlogPost');
+        const response = await axios.get<BlogPost[]>('blogplatform.azurewebsites.net/BlogPost');
         const sortedPosts = response.data.sort((a, b) => new Date(b.publishedDate).getTime() - new Date(a.publishedDate).getTime()); // Sorterer basert på dato
         setPosts(sortedPosts);
       } catch (error) {
@@ -90,7 +90,7 @@ function PrettyCarousel() {
                 <div className="relative h-full w-full overflow-hidden rounded-2xl bg-[#c9c6c7]">
                   <img
                     className="absolute right-0 top-1/2 h-auto w-24 max-w-none -translate-y-1/2 object-cover md:left-1/2 md:h-[640px] md:w-[590px] md:-translate-x-1/2"
-                    src={post.imageUrl.startsWith('http') ? post.imageUrl : `https://localhost:5001${post.imageUrl}`}
+                    src={post.imageUrl.startsWith('http') ? post.imageUrl : `blogplatform.azurewebsites.net${post.imageUrl}`}
                     alt={post.title}
                   />
                  <div

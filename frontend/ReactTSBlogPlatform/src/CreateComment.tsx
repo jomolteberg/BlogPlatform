@@ -24,7 +24,7 @@ const CreateComment: React.FC<CreateCommentProps> = ({ blogPostId }) => {
     };
 
     try {
-      await axios.post(`https://localhost:5001/Comments/${blogPostId}`, { text: commentText }, config);
+      await axios.post(`blogplatform.azurewebsites.net/Comments/${blogPostId}`, { text: commentText }, config);
       setCommentText(''); // Reset input field after submission
       
     } catch (error) {
