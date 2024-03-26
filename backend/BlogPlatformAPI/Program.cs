@@ -22,8 +22,8 @@ builder.Services.AddControllers(); // This line registers controller services
 // Configure CORS policy
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("ViteCorsPolicy", builder =>
-        builder.WithOrigins("http://localhost:5173")
+    options.AddPolicy("MyCorsPolicy", builder =>
+        builder.WithOrigins("http://localhost:5173", "https://blogplatform.azurewebsites.net")
             .AllowAnyHeader()
             .AllowAnyMethod()
             .AllowCredentials());
@@ -77,7 +77,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseStaticFiles();
 app.MapIdentityApi<IdentityUser>();
-app.UseCors("ViteCorsPolicy");
+app.UseCors("MyCorsPolicy");
 app.UseHttpsRedirection();
 app.UseRouting();
 app.UseAuthentication();
