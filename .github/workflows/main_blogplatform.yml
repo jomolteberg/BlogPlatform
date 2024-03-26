@@ -56,7 +56,9 @@ jobs:
         working-directory: ./frontend/ReactTSBlogPlatform
 
       - name: Copy build output to ASP.NET Core wwwroot
-        run: cp -r ./dist/* ../backend/BlogPlatformAPI/wwwroot/
+        run: |
+          mkdir -p ${{env.DOTNET_ROOT}}/myapp/wwwroot
+          cp -r dist/* ${{env.DOTNET_ROOT}}/myapp/wwwroot/
         working-directory: ./frontend/ReactTSBlogPlatform
 
       - name: Upload frontend artifact for deployment job
@@ -98,4 +100,5 @@ jobs:
         with:
           app-name: 'blogplatform'
           slot-name: 'Production'
-          package: .
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          package: ${{env.DOTNET_ROOT}}/myapp
