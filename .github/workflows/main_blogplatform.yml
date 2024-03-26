@@ -18,7 +18,7 @@ jobs:
           dotnet-version: '8.x'
           include-prerelease: true
       - name: Build with dotnet
-        run: dotnet build --configuration Release --project ./backend/BlogPlatformAPI/BlogPlatformAPI.csproj
+        run: dotnet build ./backend/BlogPlatformAPI/BlogPlatformAPI.csproj --configuration Release
       - name: dotnet publish
         run: dotnet publish ./backend/BlogPlatformAPI/BlogPlatformAPI.csproj -c Release -o ${{github.workspace}}/published_app
 
