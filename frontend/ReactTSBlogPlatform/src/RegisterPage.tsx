@@ -11,7 +11,7 @@ export default function RegisterPage() {
     e.preventDefault();
 
     try {
-      await axios.post('blogplatform.azurewebsites.netregister', {
+      await axios.post('blogplatform.azurewebsites.net/register', {
         email,
         password,
       });
