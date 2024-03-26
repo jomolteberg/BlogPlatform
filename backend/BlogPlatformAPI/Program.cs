@@ -52,7 +52,7 @@ builder.Configuration.AddAzureKeyVault(new Uri(keyVaultUri), new DefaultAzureCre
 var connectionString = builder.Configuration["blogPlatformDefaultConnection"];
 
 builder.Services.AddDbContext<DataContext>(options =>
-    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
+    options.UseSqlServer(connectionString));
 
 builder.Services.AddAuthorization();
 builder.Services.AddIdentityApiEndpoints<IdentityUser>()

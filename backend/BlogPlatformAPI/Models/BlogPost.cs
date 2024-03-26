@@ -1,10 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Identity;
 
-namespace BlogPlatformAPI.Models;
-
-
-public class BlogPost 
+public class BlogPost
 {
     public int Id { get; set; }
     [Required]
@@ -19,11 +16,9 @@ public class BlogPost
     public string ImageUrl { get; set; } = string.Empty;
 
     public DateTime PublishedDate { get; set; }
-
     public DateTime UpdatedDate { get; set; }
 
-    [StringLength(255)]
-    public string AuthorId { get; set; } = string.Empty;
+    public string AuthorId { get; set; } = string.Empty; // Fjernet StringLength-attributtet
     [StringLength(255)]
     public string AuthorEmail { get; set; } = string.Empty;
 
