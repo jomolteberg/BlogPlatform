@@ -56,9 +56,7 @@ jobs:
         working-directory: ./frontend/ReactTSBlogPlatform
 
       - name: Copy build output to ASP.NET Core wwwroot
-        run: |
-          mkdir -p ${{env.DOTNET_ROOT}}/myapp/wwwroot
-          cp -r dist/* ${{env.DOTNET_ROOT}}/myapp/wwwroot/
+        run: cp -r ./frontend/ReactTSBlogPlatform/dist/* ./backend/BlogPlatformAPI/wwwroot/
         working-directory: ./frontend/ReactTSBlogPlatform
 
       - name: Upload frontend artifact for deployment job
