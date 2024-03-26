@@ -64,4 +64,3 @@ jobs:
           app-name: 'blogplatform'
           slot-name: 'Production'
           package: .
-          
