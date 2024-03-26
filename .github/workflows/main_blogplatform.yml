@@ -20,7 +20,7 @@ jobs:
       - name: Build with dotnet
         run: dotnet build ./backend/BlogPlatformAPI/BlogPlatformAPI.csproj --configuration Release
       - name: dotnet publish
-        run: dotnet publish ./backend/BlogPlatformAPI/BlogPlatformAPI.csproj -c Release -o ${{github.workspace}}/published_app
+        run: dotnet publish ./backend/BlogPlatformAPI/BlogPlatformAPI.csproj -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
   build-frontend:
     runs-on: ubuntu-latest
@@ -54,15 +54,15 @@ jobs:
       - name: Download backend artifact
         uses: actions/download-artifact@v3
         with:
-          name: published_app
+          name: .net-app
       - name: Download frontend artifact
         uses: actions/download-artifact@v3
         with:
           name: frontend-build
       - name: Deploy to Azure Web App
+        id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'blogplatform'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          package: published_app
+          package: .
