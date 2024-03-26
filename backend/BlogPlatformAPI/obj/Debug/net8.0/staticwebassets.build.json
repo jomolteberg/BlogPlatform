@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "dEY1coquN/dNsCxH9htz0iN9yY3ItV+/nl7eqDG5vnc=",
+  "Hash": "o+cIK8rTStlju1IWQyktgz8kDwU+UKCzindinFyqtvI=",
   "Source": "BlogPlatformAPI",
   "BasePath": "_content/BlogPlatformAPI",
   "Mode": "Default",
@@ -36,12 +36,12 @@
       "OriginalItemSpec": "wwwroot/assets/homepage-bg.jpg"
     },
     {
-      "Identity": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/assets/index-BWbI8jmx.js",
+      "Identity": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/assets/index-Buf9XQGr.js",
       "SourceId": "BlogPlatformAPI",
       "SourceType": "Discovered",
       "ContentRoot": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/",
       "BasePath": "_content/BlogPlatformAPI",
-      "RelativePath": "assets/index-BWbI8jmx.js",
+      "RelativePath": "assets/index-Buf9XQGr.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -52,7 +52,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/assets/index-BWbI8jmx.js"
+      "OriginalItemSpec": "wwwroot/assets/index-Buf9XQGr.js"
     },
     {
       "Identity": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/assets/index-CwKQJYoy.css",
