@@ -13,7 +13,7 @@ export default function LoginPage() {
     e.preventDefault();
 
     try {
-      const response = await axios.post('blogplatform.azurewebsites.net/login', JSON.stringify({ email, password }), {
+      const response = await axios.post('https://blogplatform.azurewebsites.net/login', JSON.stringify({ email, password }), {
         headers: {
           'Content-Type': 'application/json'
         }

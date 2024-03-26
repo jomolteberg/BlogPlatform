@@ -42,7 +42,7 @@ export default function CreatePost() {
       return;
     }
   
-    const apiEndpoint = 'blogplatform.azurewebsites.net/BlogPost'; // Replace with your actual API endpoint
+    const apiEndpoint = 'https://blogplatform.azurewebsites.net/BlogPost'; // Replace with your actual API endpoint
   
     // Prepare FormData for submission
     const submissionData = new FormData();
