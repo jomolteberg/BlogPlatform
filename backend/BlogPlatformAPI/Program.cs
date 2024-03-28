@@ -11,12 +11,12 @@ using Swashbuckle.AspNetCore.Filters;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Sett appen til å lytte på porten angitt av WEBSITES_PORT eller 8080 som standard
-var port = Environment.GetEnvironmentVariable("WEBSITES_PORT") ?? "8080";
-builder.WebHost.UseUrls($"http://*:{port}");
+// Miljøspesifik valg av Key Vault Secret
+var environment = builder.Environment;
+string connectionStringKey = environment.IsDevelopment() ? "ConnectionStrings:blogPlatformDevelopmentConnection" : "blogPlatformDefaultConnection";
+
 
 builder.Services.AddSignalR();
-
 builder.Services.AddControllers(); // This line registers controller services
 
 // Configure CORS policy
@@ -44,15 +44,30 @@ builder.Services.AddSwaggerGen(options =>
 
 // Hent URI til Key Vault fra appsettings.json
 var keyVaultUri = builder.Configuration["KeyVault:Uri"];
-
 // Legg til Azure Key Vault til konfigurasjonen
 builder.Configuration.AddAzureKeyVault(new Uri(keyVaultUri), new DefaultAzureCredential());
 
-// Add services to the container.
-var connectionString = builder.Configuration["blogPlatformDefaultConnection"];
+// Kun legg til user secrets i utviklingsmiljø
+if (builder.Environment.IsDevelopment())
+{
+    builder.Configuration.AddUserSecrets<Program>();
+}
 
-builder.Services.AddDbContext<DataContext>(options =>
-    options.UseSqlServer(connectionString));
+// Legg til DbContext med riktig database provider basert på kjøremiljø
+if (environment.IsDevelopment())
+{
+    // For utviklingsmiljø, bruk MySQL
+    var developmentConnectionString = builder.Configuration["ConnectionStrings:blogPlatformDevelopmentConnection"];
+    builder.Services.AddDbContext<DataContext>(options =>
+        options.UseMySql(developmentConnectionString, ServerVersion.AutoDetect(developmentConnectionString)));
+}
+else
+{
+    // For produksjon, bruk SQL Server
+    var productionConnectionString = builder.Configuration["blogPlatformDefaultConnection"];
+    builder.Services.AddDbContext<DataContext>(options =>
+        options.UseSqlServer(productionConnectionString));
+}
 
 builder.Services.AddAuthorization();
 builder.Services.AddIdentityApiEndpoints<IdentityUser>()
@@ -74,8 +89,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+else
+{
+    app.UseStaticFiles();
+}
 
-app.UseStaticFiles();
+
 app.MapIdentityApi<IdentityUser>();
 app.UseCors("MyCorsPolicy");
 app.UseHttpsRedirection();

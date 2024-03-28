@@ -24,8 +24,9 @@ export default function BlogSection() {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await axios.get("https://blogplatform.azurewebsites.net/BlogPost");
+        const response = await axios.get(`${import.meta.env.VITE_REACT_APP_API_URL}/BlogPost`);
         console.log(response.data);
+        console.log(import.meta.env.VITE_REACT_APP_API_URL)
         setPosts(response.data);
         setIsLoading(false);
       } catch (err) {
@@ -66,7 +67,7 @@ export default function BlogSection() {
     >
       <div className="relative w-full">
         <img
-          src={post.imageUrl.startsWith('http') ? post.imageUrl : `https://blogplatform.azurewebsites.net${post.imageUrl}`}
+          src={post.imageUrl.startsWith('http') ? post.imageUrl : `${import.meta.env.VITE_REACT_APP_API_URL}/${post.imageUrl}`}
           alt=""
           className="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
         />

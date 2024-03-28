@@ -42,7 +42,7 @@ export default function CreatePost() {
       return;
     }
   
-    const apiEndpoint = 'https://blogplatform.azurewebsites.net/BlogPost'; // Replace with your actual API endpoint
+    const apiEndpoint = `${import.meta.env.VITE_REACT_APP_API_URL}/BlogPost`; 
   
     // Prepare FormData for submission
     const submissionData = new FormData();
@@ -64,7 +64,6 @@ export default function CreatePost() {
   
       // Handle response
       console.log(response.data);
-      alert('Blog post created successfully!');
   
       // Optionally, clear form or redirect user
       setFormData({ title: '', description: '', image: null }); // Clear form

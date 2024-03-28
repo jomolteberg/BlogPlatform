@@ -11,7 +11,7 @@ export default function RegisterPage() {
     e.preventDefault();
 
     try {
-      await axios.post('https://blogplatform.azurewebsites.net/register', {
+      await axios.post(`${import.meta.env.VITE_REACT_APP_API_URL}/register`, {
         email,
         password,
       });
