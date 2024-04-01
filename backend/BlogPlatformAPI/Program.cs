@@ -11,12 +11,9 @@ using Swashbuckle.AspNetCore.Filters;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Miljøspesifik valg av Key Vault Secret
-var environment = builder.Environment;
-string connectionStringKey = environment.IsDevelopment() ? "ConnectionStrings:blogPlatformDevelopmentConnection" : "blogPlatformDefaultConnection";
-
 
 builder.Services.AddSignalR();
+
 builder.Services.AddControllers(); // This line registers controller services
 
 // Configure CORS policy
@@ -44,30 +41,15 @@ builder.Services.AddSwaggerGen(options =>
 
 // Hent URI til Key Vault fra appsettings.json
 var keyVaultUri = builder.Configuration["KeyVault:Uri"];
+
 // Legg til Azure Key Vault til konfigurasjonen
 builder.Configuration.AddAzureKeyVault(new Uri(keyVaultUri), new DefaultAzureCredential());
 
-// Kun legg til user secrets i utviklingsmiljø
-if (builder.Environment.IsDevelopment())
-{
-    builder.Configuration.AddUserSecrets<Program>();
-}
+// Add services to the container.
+var connectionString = builder.Configuration["blogPlatformDefaultConnection"];
 
-// Legg til DbContext med riktig database provider basert på kjøremiljø
-if (environment.IsDevelopment())
-{
-    // For utviklingsmiljø, bruk MySQL
-    var developmentConnectionString = builder.Configuration["ConnectionStrings:blogPlatformDevelopmentConnection"];
-    builder.Services.AddDbContext<DataContext>(options =>
-        options.UseMySql(developmentConnectionString, ServerVersion.AutoDetect(developmentConnectionString)));
-}
-else
-{
-    // For produksjon, bruk SQL Server
-    var productionConnectionString = builder.Configuration["blogPlatformDefaultConnection"];
-    builder.Services.AddDbContext<DataContext>(options =>
-        options.UseSqlServer(productionConnectionString));
-}
+builder.Services.AddDbContext<DataContext>(options =>
+    options.UseSqlServer(connectionString));
 
 builder.Services.AddAuthorization();
 builder.Services.AddIdentityApiEndpoints<IdentityUser>()
@@ -89,12 +71,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-else
-{
-    app.UseStaticFiles();
-}
 
-
+app.UseStaticFiles();
 app.MapIdentityApi<IdentityUser>();
 app.UseCors("MyCorsPolicy");
 app.UseHttpsRedirection();
