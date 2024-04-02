@@ -11,6 +11,9 @@ using Swashbuckle.AspNetCore.Filters;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Sett appen til å lytte på porten angitt av WEBSITES_PORT eller 8080 som standard
+var port = Environment.GetEnvironmentVariable("WEBSITES_PORT") ?? "8080";
+builder.WebHost.UseUrls($"http://*:{port}");
 
 builder.Services.AddSignalR();
 
