@@ -4,6 +4,7 @@ using BlogPlatformAPI.Data;
 using BlogPlatformAPI.Dtos;
 using BlogPlatformAPI.Interfaces;
 using BlogPlatformAPI.Models;
+using Ganss.Xss;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,13 +17,14 @@ public class BlogPostController : ControllerBase
     private readonly DataContext _context;
     private readonly UserManager<IdentityUser> _userManager;
     private readonly IAzureBlobService _azureBlobService;
+    private readonly HtmlSanitizer _sanitizer;
 
-
-    public BlogPostController(DataContext context, UserManager<IdentityUser> userManager, IAzureBlobService azureBlobService)
+    public BlogPostController(DataContext context, UserManager<IdentityUser> userManager, IAzureBlobService azureBlobService, HtmlSanitizer htmlSanitizer)
     {
         _context = context;
         _userManager = userManager;
         _azureBlobService = azureBlobService;
+        _sanitizer = htmlSanitizer;
     }
 
     [HttpGet]
@@ -71,7 +73,7 @@ public class BlogPostController : ControllerBase
         var blogPost = new BlogPost
         {
             Title = blogPostDto.Title,
-            Content = blogPostDto.Content,
+            Content = _sanitizer.Sanitize(blogPostDto.Content),
             ImageUrl = imageUrl,
             AuthorId = user.Id, // Assuming your BlogPost model has an AuthorId to link to the User
             AuthorEmail = user.Email,
@@ -124,7 +126,7 @@ public class BlogPostController : ControllerBase
 
         // Update properties
         blogPost.Title = model.Title;
-        blogPost.Content = model.Content;
+        blogPost.Content = _sanitizer.Sanitize(model.Content);
         _context.Entry(blogPost).State = EntityState.Modified;
 
         await _context.SaveChangesAsync(); // Persist changes
