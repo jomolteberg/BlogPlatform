@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "o+cIK8rTStlju1IWQyktgz8kDwU+UKCzindinFyqtvI=",
+  "Hash": "NghSSVWed1KXBRMhsdTz4sRU4CsxlbmB3fRAE73Fh+U=",
   "Source": "BlogPlatformAPI",
   "BasePath": "_content/BlogPlatformAPI",
   "Mode": "Default",
@@ -36,12 +36,12 @@
       "OriginalItemSpec": "wwwroot/assets/homepage-bg.jpg"
     },
     {
-      "Identity": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/assets/index-Buf9XQGr.js",
+      "Identity": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/assets/index-BwMHs6wM.js",
       "SourceId": "BlogPlatformAPI",
       "SourceType": "Discovered",
       "ContentRoot": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/",
       "BasePath": "_content/BlogPlatformAPI",
-      "RelativePath": "assets/index-Buf9XQGr.js",
+      "RelativePath": "assets/index-BwMHs6wM.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -52,15 +52,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/assets/index-Buf9XQGr.js"
+      "OriginalItemSpec": "wwwroot/assets/index-BwMHs6wM.js"
     },
     {
-      "Identity": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/assets/index-CwKQJYoy.css",
+      "Identity": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/assets/index-BX0z1-Yu.css",
       "SourceId": "BlogPlatformAPI",
       "SourceType": "Discovered",
       "ContentRoot": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/",
       "BasePath": "_content/BlogPlatformAPI",
-      "RelativePath": "assets/index-CwKQJYoy.css",
+      "RelativePath": "assets/index-BX0z1-Yu.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -71,7 +71,26 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/assets/index-CwKQJYoy.css"
+      "OriginalItemSpec": "wwwroot/assets/index-BX0z1-Yu.css"
+    },
+    {
+      "Identity": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/assets/monument-valley-1.jpg",
+      "SourceId": "BlogPlatformAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/",
+      "BasePath": "_content/BlogPlatformAPI",
+      "RelativePath": "assets/monument-valley-1.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/assets/monument-valley-1.jpg"
     },
     {
       "Identity": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/index.html",

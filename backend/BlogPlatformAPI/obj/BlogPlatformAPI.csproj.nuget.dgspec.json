@@ -54,6 +54,10 @@
               "target": "Package",
               "version": "[12.20.0-beta.1, )"
             },
+            "HtmlSanitizer": {
+              "target": "Package",
+              "version": "[8.0.843, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.3, )"
