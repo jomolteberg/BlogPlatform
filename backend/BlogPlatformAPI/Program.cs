@@ -3,6 +3,7 @@ using BlogPlatformAPI.Data;
 using BlogPlatformAPI.Hubs;
 using BlogPlatformAPI.Interfaces;
 using BlogPlatformAPI.Models;
+using Ganss.Xss;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
@@ -10,10 +11,6 @@ using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.Filters;
 
 var builder = WebApplication.CreateBuilder(args);
-
-// Sett appen til å lytte på porten angitt av WEBSITES_PORT eller 8080 som standard
-var port = Environment.GetEnvironmentVariable("WEBSITES_PORT") ?? "8080";
-builder.WebHost.UseUrls($"http://*:{port}");
 
 builder.Services.AddSignalR();
 
@@ -28,6 +25,8 @@ builder.Services.AddCors(options =>
             .AllowAnyMethod()
             .AllowCredentials());
 });
+
+builder.Services.AddScoped<HtmlSanitizer>();
 
 // Add services to the container.
 builder.Services.AddEndpointsApiExplorer();
