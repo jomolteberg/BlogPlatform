@@ -5,12 +5,156 @@
       "PackagePath": "staticwebassets/assets/homepage-bg.jpg"
     },
     {
-      "Id": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/assets/index-BVxuClGA.css",
-      "PackagePath": "staticwebassets/assets/index-BVxuClGA.css"
+      "Id": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/assets/images/about-1.jpg",
+      "PackagePath": "staticwebassets/assets/images/about-1.jpg"
     },
     {
-      "Id": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/assets/index-DNXDr9eE.js",
-      "PackagePath": "staticwebassets/assets/index-DNXDr9eE.js"
+      "Id": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/assets/images/about-2.jpg",
+      "PackagePath": "staticwebassets/assets/images/about-2.jpg"
+    },
+    {
+      "Id": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/assets/images/amsterdam/amsterdam-1.jpg",
+      "PackagePath": "staticwebassets/assets/images/amsterdam/amsterdam-1.jpg"
+    },
+    {
+      "Id": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/assets/images/amsterdam/miami-1.jpg",
+      "PackagePath": "staticwebassets/assets/images/amsterdam/miami-1.jpg"
+    },
+    {
+      "Id": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/assets/images/amsterdam/newyork-1.jpg",
+      "PackagePath": "staticwebassets/assets/images/amsterdam/newyork-1.jpg"
+    },
+    {
+      "Id": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/assets/images/amsterdam/seoul-1.jpg",
+      "PackagePath": "staticwebassets/assets/images/amsterdam/seoul-1.jpg"
+    },
+    {
+      "Id": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/assets/images/amsterdam/tokyo-1.jpg",
+      "PackagePath": "staticwebassets/assets/images/amsterdam/tokyo-1.jpg"
+    },
+    {
+      "Id": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/assets/images/australia-1.jpg",
+      "PackagePath": "staticwebassets/assets/images/australia-1.jpg"
+    },
+    {
+      "Id": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/assets/images/beaches-1.jpg",
+      "PackagePath": "staticwebassets/assets/images/beaches-1.jpg"
+    },
+    {
+      "Id": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/assets/images/berlin-1.jpg",
+      "PackagePath": "staticwebassets/assets/images/berlin-1.jpg"
+    },
+    {
+      "Id": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/assets/images/budapest-1.jpg",
+      "PackagePath": "staticwebassets/assets/images/budapest-1.jpg"
+    },
+    {
+      "Id": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/assets/images/california-1.jpg",
+      "PackagePath": "staticwebassets/assets/images/california-1.jpg"
+    },
+    {
+      "Id": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/assets/images/contact-1.jpg",
+      "PackagePath": "staticwebassets/assets/images/contact-1.jpg"
+    },
+    {
+      "Id": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/assets/images/egypt/egypt-1.jpg",
+      "PackagePath": "staticwebassets/assets/images/egypt/egypt-1.jpg"
+    },
+    {
+      "Id": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/assets/images/egypt/egypt-2.jpg",
+      "PackagePath": "staticwebassets/assets/images/egypt/egypt-2.jpg"
+    },
+    {
+      "Id": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/assets/images/egypt/egypt-3.jpg",
+      "PackagePath": "staticwebassets/assets/images/egypt/egypt-3.jpg"
+    },
+    {
+      "Id": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/assets/images/egypt/egypt-4.jpg",
+      "PackagePath": "staticwebassets/assets/images/egypt/egypt-4.jpg"
+    },
+    {
+      "Id": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/assets/images/egypt/egypt-5.jpg",
+      "PackagePath": "staticwebassets/assets/images/egypt/egypt-5.jpg"
+    },
+    {
+      "Id": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/assets/images/egypt/egypt-6.jpg",
+      "PackagePath": "staticwebassets/assets/images/egypt/egypt-6.jpg"
+    },
+    {
+      "Id": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/assets/images/greece-island-1.jpg",
+      "PackagePath": "staticwebassets/assets/images/greece-island-1.jpg"
+    },
+    {
+      "Id": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/assets/images/homepage-bg.jpg",
+      "PackagePath": "staticwebassets/assets/images/homepage-bg.jpg"
+    },
+    {
+      "Id": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/assets/images/iceland-1.jpg",
+      "PackagePath": "staticwebassets/assets/images/iceland-1.jpg"
+    },
+    {
+      "Id": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/assets/images/london-1.jpg",
+      "PackagePath": "staticwebassets/assets/images/london-1.jpg"
+    },
+    {
+      "Id": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/assets/images/maldives-1.jpg",
+      "PackagePath": "staticwebassets/assets/images/maldives-1.jpg"
+    },
+    {
+      "Id": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/assets/images/miami-1.jpg",
+      "PackagePath": "staticwebassets/assets/images/miami-1.jpg"
+    },
+    {
+      "Id": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/assets/images/monument-valley-1.jpg",
+      "PackagePath": "staticwebassets/assets/images/monument-valley-1.jpg"
+    },
+    {
+      "Id": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/assets/images/newyork-1.jpg",
+      "PackagePath": "staticwebassets/assets/images/newyork-1.jpg"
+    },
+    {
+      "Id": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/assets/images/paris-1.jpg",
+      "PackagePath": "staticwebassets/assets/images/paris-1.jpg"
+    },
+    {
+      "Id": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/assets/images/placeholderprofile.jpeg",
+      "PackagePath": "staticwebassets/assets/images/placeholderprofile.jpeg"
+    },
+    {
+      "Id": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/assets/images/seoul-1.jpg",
+      "PackagePath": "staticwebassets/assets/images/seoul-1.jpg"
+    },
+    {
+      "Id": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/assets/images/seychelles-1.jpg",
+      "PackagePath": "staticwebassets/assets/images/seychelles-1.jpg"
+    },
+    {
+      "Id": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/assets/images/thailand-1.jpg",
+      "PackagePath": "staticwebassets/assets/images/thailand-1.jpg"
+    },
+    {
+      "Id": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/assets/images/tokyo-1.jpg",
+      "PackagePath": "staticwebassets/assets/images/tokyo-1.jpg"
+    },
+    {
+      "Id": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/assets/images/uae-1.jpg",
+      "PackagePath": "staticwebassets/assets/images/uae-1.jpg"
+    },
+    {
+      "Id": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/assets/images/venice-1.jpg",
+      "PackagePath": "staticwebassets/assets/images/venice-1.jpg"
+    },
+    {
+      "Id": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/assets/images/venice-2.jpg",
+      "PackagePath": "staticwebassets/assets/images/venice-2.jpg"
+    },
+    {
+      "Id": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/assets/index-BWB8N7Np.css",
+      "PackagePath": "staticwebassets/assets/index-BWB8N7Np.css"
+    },
+    {
+      "Id": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/assets/index-CAue8A0S.js",
+      "PackagePath": "staticwebassets/assets/index-CAue8A0S.js"
     },
     {
       "Id": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/assets/monument-valley-1.jpg",
@@ -19,6 +163,14 @@
     {
       "Id": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/index.html",
       "PackagePath": "staticwebassets/index.html"
+    },
+    {
+      "Id": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/jofm.svg",
+      "PackagePath": "staticwebassets/jofm.svg"
+    },
+    {
+      "Id": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/jofmlogo_v2.svg",
+      "PackagePath": "staticwebassets/jofmlogo_v2.svg"
     },
     {
       "Id": "/Users/jomolteberg/repos/BlogPlatform/backend/BlogPlatformAPI/wwwroot/vite.svg",
