@@ -12,7 +12,6 @@ using Swashbuckle.AspNetCore.Filters;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
 builder.Services.AddSignalR();
 
 builder.Services.AddControllers(); // This line registers controller services
@@ -26,6 +25,8 @@ builder.Services.AddCors(options =>
             .AllowAnyMethod()
             .AllowCredentials());
 });
+
+builder.Services.AddScoped<HtmlSanitizer>();
 
 // Add services to the container.
 builder.Services.AddEndpointsApiExplorer();
