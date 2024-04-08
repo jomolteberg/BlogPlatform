@@ -13,10 +13,10 @@ using Microsoft.EntityFrameworkCore;
 public class CommentsController : ControllerBase
 {
     private readonly DataContext _context;
-    private readonly UserManager<IdentityUser> _userManager;
+    private readonly UserManager<User> _userManager;
     private readonly IHubContext<CommentHub> _hubContext;
 
-    public CommentsController(DataContext context, UserManager<IdentityUser> userManager, IHubContext<CommentHub> hubContext)
+    public CommentsController(DataContext context, UserManager<User> userManager, IHubContext<CommentHub> hubContext)
     {
         _context = context;
         _userManager = userManager;
