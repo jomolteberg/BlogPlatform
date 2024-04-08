@@ -11,6 +11,7 @@ import AboutPage from "./AboutPage";
 import ContactPage from "./ContactPage";
 import CreatePost from "./CreatePost";
 import BlogSection from "./BlogSection";
+import PageNotFound from "./PageNotFound";
 
 function App() {
   return (
@@ -23,6 +24,8 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/create-post" element={<CreatePost />} />
+        <Route path="/page-not-found" element={<PageNotFound />} />
+        
 
 
         <Route path="/register" element={<RegisterPage />} />

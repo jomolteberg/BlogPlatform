@@ -15,11 +15,11 @@ namespace BlogPlatformAPI.Controllers;
 public class BlogPostController : ControllerBase
 {
     private readonly DataContext _context;
-    private readonly UserManager<IdentityUser> _userManager;
+    private readonly UserManager<User> _userManager;
     private readonly IAzureBlobService _azureBlobService;
     private readonly HtmlSanitizer _sanitizer;
 
-    public BlogPostController(DataContext context, UserManager<IdentityUser> userManager, IAzureBlobService azureBlobService, HtmlSanitizer htmlSanitizer)
+    public BlogPostController(DataContext context, UserManager<User> userManager, IAzureBlobService azureBlobService, HtmlSanitizer htmlSanitizer)
     {
         _context = context;
         _userManager = userManager;
@@ -92,10 +92,8 @@ public class BlogPostController : ControllerBase
         var fileName = Guid.NewGuid().ToString() + Path.GetExtension(imageFile.FileName); // Create a unique file name
         var contentType = imageFile.ContentType;
 
-        using (var stream = imageFile.OpenReadStream())
-        {
-            return await _azureBlobService.UploadFileAsync(containerName, stream, fileName, contentType);
-        }
+        await using var stream = imageFile.OpenReadStream();
+        return await _azureBlobService.UploadFileAsync(containerName, stream, fileName, contentType);
     }
 
 

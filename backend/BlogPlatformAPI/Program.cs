@@ -53,8 +53,11 @@ var connectionString = builder.Configuration["blogPlatformDefaultConnection"];
 builder.Services.AddDbContext<DataContext>(options =>
     options.UseSqlServer(connectionString));
 
+// Register HtmlSanitizer
+builder.Services.AddScoped<HtmlSanitizer>(provider => new HtmlSanitizer());
+
 builder.Services.AddAuthorization();
-builder.Services.AddIdentityApiEndpoints<IdentityUser>()
+builder.Services.AddIdentityApiEndpoints<User>()
     .AddEntityFrameworkStores<DataContext>();
 
 // Etter å ha lagt til Key Vault, hent konfigurasjonsverdier
@@ -75,7 +78,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseStaticFiles();
-app.MapIdentityApi<IdentityUser>();
+app.MapIdentityApi<User>();
 app.UseCors("MyCorsPolicy");
 app.UseHttpsRedirection();
 app.UseRouting();

@@ -20,7 +20,7 @@ public class BlogPost
 
     public string AuthorId { get; set; } = string.Empty; // Fjernet StringLength-attributtet
     [StringLength(255)]
-    public string AuthorEmail { get; set; } = string.Empty;
+    public string? AuthorEmail { get; set; } = string.Empty;
 
     public virtual IdentityUser Author { get; set; }
 }

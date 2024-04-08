@@ -5,7 +5,6 @@ import CreateComment from "./CreateComment";
 import Comments from "./Comments";
 import { BlogPost } from "./types";
 
-
 function BlogPostPage() {
   const { id } = useParams<{ id?: string }>();
   const [post, setPost] = useState<BlogPost | null>(null);
@@ -16,7 +15,9 @@ function BlogPostPage() {
     const fetchPost = async () => {
       setIsLoading(true);
       try {
-        const response = await axios.get(`${import.meta.env.VITE_REACT_APP_API_URL}/BlogPost/${id}`);
+        const response = await axios.get(
+          `${import.meta.env.VITE_REACT_APP_API_URL}/BlogPost/${id}`
+        );
         setPost(response.data);
       } catch (err) {
         if (err instanceof Error) {
@@ -44,23 +45,31 @@ function BlogPostPage() {
         <div className="mx-auto max-w-3xl text-base leading-7 text-gray-700">
           <figure className="mt-16">
             <img
-              className="aspect-video rounded-xl bg-gray-50 object-cover"
-              src={post.imageUrl.startsWith('http') ? post.imageUrl : `${import.meta.env.VITE_REACT_APP_API_URL}${post.imageUrl}`}
+              className=" sm:h-[650px] aspect-video rounded-xl bg-gray-50 object-cover"
+              src={
+                post.imageUrl.startsWith("http")
+                  ? post.imageUrl
+                  : `${import.meta.env.VITE_REACT_APP_API_URL}${post.imageUrl}`
+              }
               alt=""
             />
           </figure>
-          <p className="mt-2 text-base font-semibold leading-7 text-orange-600">{post.category}</p>
-
-          <h1 className="mt-20 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{post.title}</h1>
-          <p className="mt-6 text-xl leading-8">
-            {post.content}
+          <p className="mt-2 text-base font-semibold leading-7 text-orange-600">
+            {post.category}
           </p>
 
+          <h1 className="mt-20 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            {post.title}
+          </h1>
+          <div className="prose">
+            <div dangerouslySetInnerHTML={{ __html: post.content }} />
+          </div>
+
           <div className="mt-20">
-            <CreateComment blogPostId={Number(id)}/>
+            <CreateComment blogPostId={Number(id)} />
           </div>
           <div className="mt-20">
-            <Comments blogPostId={Number(id)}/>
+            <Comments blogPostId={Number(id)} />
           </div>
         </div>
       </div>

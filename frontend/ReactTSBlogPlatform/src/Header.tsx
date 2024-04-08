@@ -31,9 +31,9 @@ export default function Header() {
     <header className="bg-white">
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-x-6 p-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
-          <a onClick={() => navigate('/')} href="#" className="-m-1.5 p-1.5">
+          <a onClick={() => navigate('/')} href="#" className="-m-1.5 p-1.5" style={{ height: '50px', display: 'flex', alignItems: 'center' }}>
             <span className="sr-only">Your Company</span>
-            <img className="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=orange&shade=600" alt="" />
+            <img className="h-10 w-auto" src="jofmlogo_v2.svg" alt=""/>
           </a>
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
@@ -51,11 +51,14 @@ export default function Header() {
                 className="ml-4 inline-flex items-center rounded-md bg-gray-800 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-800"
               >
                 <PencilIcon className="h-5 w-5 text-white" aria-hidden="true" />
-                <span className="hidden">Create Post</span> {/* Teksten skjules på skjermer mindre enn xl */}
+                <span className="hidden">Create Post</span> 
               </button>
+              <div onClick={() => navigate('/page-not-found')}>
+
               <span className="hidden lg:block lg:text-sm lg:font-semibold lg:leading-6 lg:text-gray-900 cursor-pointer">
                 {email}
               </span>
+              </div>
               <button
                 onClick={handleLogout}
                 className="rounded-md bg-orange-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-orange-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600"
@@ -94,7 +97,7 @@ export default function Header() {
           <div className="flex items-center gap-x-6">
             <a href="#" onClick={(e) => { e.preventDefault(); navigate('/'); }} className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
-              <img className="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=orange&shade=600" alt="" />
+              <img className="h-8 w-auto" src="jofmlogo_v2.svg" alt="" />
             </a>
             {isAuthenticated ? (
               <button

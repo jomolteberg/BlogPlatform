@@ -18,6 +18,16 @@ public class DataContext : IdentityDbContext<IdentityUser>
     {
         base.OnModelCreating(modelBuilder);
 
+        // If you have a custom User class with additional properties, configure it here
+        // For example, if User now includes FirstName, LastName, ProfileImageUrl
+        modelBuilder.Entity<User>(user =>
+        {
+            user.Property(u => u.FirstName).HasMaxLength(100);
+            user.Property(u => u.LastName).HasMaxLength(100);
+            user.Property(u => u.ProfileImageUrl).HasMaxLength(255);
+        });
+
+        
         modelBuilder.Entity<BlogPost>()
             .HasOne(b => b.Author) 
             .WithMany()
